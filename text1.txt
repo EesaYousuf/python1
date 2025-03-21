@@ -1,0 +1,7 @@
+Name	Age 	Designation	Salary
+eesa	24	ml	10k
+sana	23	nt	20k
+fathima	25	dvp	30k
+soiba	45	eng	50k
+sameer	75	wk	30k
+hussain	80	jk	90k
