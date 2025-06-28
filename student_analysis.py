@@ -21,4 +21,14 @@ print(df[['Math', 'Science', 'English']].mean())
 # Pass/Fail count
 print("\n✅📉 Result Count:")
 print(df['Result'].value_counts())
+# Plot bar chart of average marks
+plt.figure(figsize=(8, 5))
+plt.bar(df['Name'], df['Average'], color='skyblue')
+plt.xlabel("Students")
+plt.ylabel("Average Marks")
+plt.title("Student Performance")
+plt.ylim(0, 100)
+plt.grid(True)
+plt.tight_layout()
+plt.show()
 
