@@ -45,4 +45,16 @@ from PIL import Image, ImageTk, ImageFilter
         tk_img = ImageTk.PhotoImage(resized)
         self.img_label.configure(image=tk_img)
         self.img_label.image = tk_img
-    
+     def to_grayscale(self):
+        if self.image:
+            self.image = self.image.convert("L")
+            self.display_image()
+
+    def blur_image(self):
+        if self.image:
+            self.image = self.image.filter(ImageFilter.BLUR)
+            self.display_image()
+    def rotate_image(self):
+        if self.image:
+            self.image = self.image.rotate(90, expand=True)
+            self.display_image()
