@@ -27,3 +27,14 @@ def update_figure(relayout_data):
     Output('area-output', 'children'),
     Input('curve', 'relayoutData')
 )
+def update_area(relayout_data):
+    if relayout_data and 'xaxis.range[0]' in relayout_data:
+        x_min = float(relayout_data['xaxis.range[0]'])
+        x_max = float(relayout_data['xaxis.range[1]'])
+        mask = (x >= x_min) & (x <= x_max)
+        area = np.trapz(y[mask], x[mask])
+        return f"{area:.4f}"
+    return "Zoom in to calculate area."
+
+if __name__ == '__main__':
+    app.run_server(debug=True)
