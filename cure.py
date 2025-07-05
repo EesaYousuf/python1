@@ -12,3 +12,18 @@ app.layout = html.Div([
     html.Div("Area under curve in view:", style={"marginTop": "20px"}),
     html.Div(id='area-output')
 ])
+@app.callback(
+    Output('curve', 'figure'),
+    Input('curve', 'relayoutData')
+)
+def update_figure(relayout_data):
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=x, y=y, mode='lines', name='y = sin(x)+1'))
+
+    fig.update_layout(title="Zoom in/out to update area")
+    return fig
+
+@app.callback(
+    Output('area-output', 'children'),
+    Input('curve', 'relayoutData')
+)
