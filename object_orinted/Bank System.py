@@ -30,3 +30,13 @@ class Account:
             "Account Number": self.__account_number,
             "Balance": self._balance
         }
+        # --- Derived Class ---
+class SavingsAccount(Account):
+    def __init__(self, owner, balance=0, interest_rate=0.03):
+        super().__init__(owner, balance)
+        self.interest_rate = interest_rate
+
+    def apply_interest(self):
+        interest = self._balance * self.interest_rate
+        self._balance += interest
+        print(f"Interest of {interest:.2f} applied.")
