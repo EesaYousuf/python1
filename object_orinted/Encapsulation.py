@@ -12,3 +12,13 @@ class BankAccount:
 
     def get_account_number(self):
         return self.__account_number  # exposing private attribute via method
+        # --- Testing Encapsulation ---
+account = BankAccount("Alice", 1000)
+
+print(account.owner)          # ✅ Public: Accessible
+print(account._balance)       # ⚠️ Protected: Accessible but not recommended
+
+try:
+    print(account.__account_number)  # ❌ Private: AttributeError
+except AttributeError as e:
+    print("Error:", e)
