@@ -21,3 +21,12 @@ class Account:
         self._balance -= amount
         print(f"{amount} withdrawn from {self.owner}'s account.")
 
+     def get_balance(self):
+        return self._balance
+
+    def get_account_info(self):
+        return {
+            "Owner": self.owner,
+            "Account Number": self.__account_number,
+            "Balance": self._balance
+        }
