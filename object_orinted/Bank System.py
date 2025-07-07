@@ -40,3 +40,14 @@ class SavingsAccount(Account):
         interest = self._balance * self.interest_rate
         self._balance += interest
         print(f"Interest of {interest:.2f} applied.")
+        # --- Another Derived Class ---
+class CheckingAccount(Account):
+    def __init__(self, owner, balance=0, overdraft_limit=100):
+        super().__init__(owner, balance)
+        self.overdraft_limit = overdraft_limit
+
+    def withdraw(self, amount):
+        if amount > self._balance + self.overdraft_limit:
+            raise InsufficientFundsError("Overdraft limit exceeded!")
+        self._balance -= amount
+        print(f"{amount} withdrawn from {self.owner}'s checking account.")
