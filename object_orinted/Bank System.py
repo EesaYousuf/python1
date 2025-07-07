@@ -11,3 +11,13 @@ class Account:
         self.__account_number = str(uuid.uuid4())[:8]  # private attribute
         self.owner = owner
         self._balance = balance  # protected attribute
+        def deposit(self, amount):
+        self._balance += amount
+        print(f"{amount} deposited to {self.owner}'s account.")
+
+    def withdraw(self, amount):
+        if amount > self._balance:
+            raise InsufficientFundsError("Insufficient funds!")
+        self._balance -= amount
+        print(f"{amount} withdrawn from {self.owner}'s account.")
+
