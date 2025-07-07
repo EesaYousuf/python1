@@ -51,3 +51,19 @@ class CheckingAccount(Account):
             raise InsufficientFundsError("Overdraft limit exceeded!")
         self._balance -= amount
         print(f"{amount} withdrawn from {self.owner}'s checking account.")
+# --- Demo Usage ---
+if __name__ == "__main__":
+    alice = SavingsAccount("Alice", 1000)
+    bob = CheckingAccount("Bob", 500)
+
+    alice.deposit(200)
+    alice.apply_interest()
+    print(alice.get_account_info())
+
+    bob.withdraw(550)
+    try:
+        bob.withdraw(100)
+    except InsufficientFundsError as e:
+        print("Error:", e)
+
+    print(bob.get_account_info())
