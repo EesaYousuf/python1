@@ -23,3 +23,12 @@ class BankAccount:
     def is_premium(self):
         """Read-only computed property"""
         return self.__balance >= 10000
+# --- Usage ---
+account = BankAccount("Alice", 5000)
+
+# ✅ Get balance (calls getter)
+print(account.balance)
+
+# ✅ Set balance (calls setter with validation)
+account.balance = 8000
+print(account.balance)
