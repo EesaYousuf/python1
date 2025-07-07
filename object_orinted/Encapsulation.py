@@ -22,3 +22,8 @@ try:
     print(account.__account_number)  # ❌ Private: AttributeError
 except AttributeError as e:
     print("Error:", e)
+# ✅ Correct way to access private data:
+print(account.get_account_number())
+
+# 🔍 But private variables still exist...
+print(account._BankAccount__account_number)  # ⚠️ Name-mangled access (hacky)
