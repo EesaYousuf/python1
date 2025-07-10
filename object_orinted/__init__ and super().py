@@ -18,3 +18,10 @@ class Son(Father):
 
     def laptop(self):
         print("Son: Owns a laptop.")
+# Creating an object of Son class
+s = Son()
+
+# Accessing inherited methods
+s.house()    # From Grandfather
+s.car()      # From Father
+s.laptop()   # From Son
