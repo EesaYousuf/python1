@@ -10,3 +10,7 @@ class Father(Person):
 class Mother(Person):
     def mother_info(self):
         print("Mother: Doctor")
+# Hybrid: inherits from both Father and Mother
+class Child(Father, Mother):
+    def child_info(self):
+        print("Child: Student")
