@@ -17,3 +17,6 @@ d = Daughter()
 print("Son's properties:")
 s.home()   # Inherited from Parent
 s.bike()
+print("\nDaughter's properties:")
+d.home()   # Inherited from Parent
+d.car()
