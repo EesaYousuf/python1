@@ -13,3 +13,7 @@ class Daughter(Parent):
 # Creating objects of child classes
 s = Son()
 d = Daughter()
+# Accessing methods
+print("Son's properties:")
+s.home()   # Inherited from Parent
+s.bike()
