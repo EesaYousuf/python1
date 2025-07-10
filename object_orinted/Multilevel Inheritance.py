@@ -6,4 +6,9 @@ class Grandfather:
 class Father(Grandfather):
     def car(self):
         print("Father: Owns a car.")
+ # Derived class from Father
+class Son(Father):
+    def laptop(self):
+        print("Son: Owns a laptop.")
+       
      
