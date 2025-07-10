@@ -14,3 +14,15 @@ class Mother(Person):
 class Child(Father, Mother):
     def child_info(self):
         print("Child: Student")
+
+
+Creating object and calling methods:
+python
+Copy
+Edit
+c = Child()
+
+c.info()         # Inherited from Person
+c.father_info()  # From Father
+c.mother_info()  # From Mother
+c.child_info()   # Own method
