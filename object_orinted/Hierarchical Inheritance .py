@@ -10,3 +10,6 @@ class Son(Parent):
 class Daughter(Parent):
     def car(self):
         print("Daughter: Owns a car.")
+# Creating objects of child classes
+s = Son()
+d = Daughter()
