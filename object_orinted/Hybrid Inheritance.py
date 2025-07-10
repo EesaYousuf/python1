@@ -6,3 +6,7 @@ class Person:
 class Father(Person):
     def father_info(self):
         print("Father: Engineer")        
+# Second level derived class
+class Mother(Person):
+    def mother_info(self):
+        print("Mother: Doctor")
