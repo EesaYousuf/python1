@@ -11,4 +11,10 @@ class Father(Grandfather):
 
     def car(self):
         print("Father: Owns a car.")
+class Son(Father):
+    def __init__(self):
+        super().__init__()  # Call Father's constructor
+        print("Son's constructor called.")
 
+    def laptop(self):
+        print("Son: Owns a laptop.")
