@@ -35,4 +35,7 @@ def train_neural_network(X, y, epochs=10000, learning_rate=0.1):
         weights_input_hidden += X.T.dot(d_hidden) * learning_rate
         ghts_hidden_output = np.random.uniform(-1, 1, (hidden_size, output_size))
 
-    
+    if epoch % 1000 == 0:
+            loss = np.mean(np.abs(error))
+            print(f"Epoch {epoch}, Loss: {loss}")
+        return weights_input_hidden, weights_hidden_output
