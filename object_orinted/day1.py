@@ -45,3 +45,16 @@ def train_neural_network(X, y, epochs=10000, learning_rate=0.1):
     hidden_layer_output = sigmoid(hidden_layer_input)
     output_layer_input = np.dot(hidden_layer_output, weights_hidden_output)
     return sigmoid(output_layer_input)
+    def main():
+    print("Training XOR Neural Network...")
+    X, y = generate_dataset(1000)
+    weights_input_hidden, weights_hidden_output = train_neural_network(X, y)
+        # Test the model
+    test_data = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+    predictions = predict(test_data, weights_input_hidden, weights_hidden_output)
+    print("\nPredictions for XOR:")
+    for i, test in enumerate(test_data):
+        print(f"Input: {test}, Output: {round(predictions[i][0])}")
+
+if __name__ == "__main__":
+    main()
