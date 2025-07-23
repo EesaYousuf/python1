@@ -19,5 +19,20 @@ def train_neural_network(X, y, epochs=10000, learning_rate=0.1):
     output_size = 1
      # Initialize weights
     weights_input_hidden = np.random.uniform(-1, 1, (input_size, hidden_size))
-    weights_hidden_output = np.random.uniform(-1, 1, (hidden_size, output_size))
+    wei for epoch in range(epochs):
+        # Forward pass
+        hidden_layer_input = np.dot(X, weights_input_hidden)
+        hidden_layer_output = sigmoid(hidden_layer_input)
+        output_layer_input = np.dot(hidden_layer_output, weights_hidden_output)
+        output = sigmoid(output_layer_input)
+        # Compute error
+        error = y - output
+        # Backpropagation
+        d_output = error * sigmoid_derivative(output)
+        d_hidden = d_output.dot(weights_hidden_output.T) * sigmoid_derivative(hidden_layer_output)
+              # Update weights
+        weights_hidden_output += hidden_layer_output.T.dot(d_output) * learning_rate
+        weights_input_hidden += X.T.dot(d_hidden) * learning_rate
+        ghts_hidden_output = np.random.uniform(-1, 1, (hidden_size, output_size))
+
     
